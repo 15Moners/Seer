@@ -49,6 +49,9 @@ li a {
 li a:hover {
   background-color: #111111;
 }
+    h4 {
+      text-align: right;
+    }
   </style>
   
   <header>
@@ -66,6 +69,33 @@ li a:hover {
     <li><a href="news.html">News</a></li>
     <li><a href="seerkids.html">Seer™ Kids</a></li>
 </ul>
+  <h4><div id="clockbox"></div>
+
+<script type="text/javascript">
+var tday=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+var tmonth=["January","February","March","April","May","June","July","August","September","October","November","December"];
+
+function GetClock(){
+var d=new Date();
+var nday=d.getDay(),nmonth=d.getMonth(),ndate=d.getDate(),nyear=d.getFullYear();
+var nhour=d.getHours(),nmin=d.getMinutes(),nsec=d.getSeconds(),ap;
+
+if(nhour==0){ap=" AM";nhour=12;}
+else if(nhour<12){ap=" AM";}
+else if(nhour==12){ap=" PM";}
+else if(nhour>12){ap=" PM";nhour-=12;}
+
+if(nmin<=9) nmin="0"+nmin;
+if(nsec<=9) nsec="0"+nsec;
+
+var clocktext=""+tday[nday]+", "+tmonth[nmonth]+" "+ndate+", "+nyear+" "+nhour+":"+nmin+":"+nsec+ap+"";
+document.getElementById('clockbox').innerHTML=clocktext;
+}
+
+GetClock();
+setInterval(GetClock,1000);
+</script>
+</h4>
   <body>
    <h2><font face="Arial" size="5px" color="#00000">Ask Seer™ Kids a question :</font></h2> 
     <div class="gcse-searchbox" data-resultsUrl="https://seer.ebreomedia.repl.co/seerkids.html" data-newWindow="true" data-queryParameterName="search" data-enableHistory="true" data-autoCompleteMaxCompletions="5" data-gname="storesearch"></div>
