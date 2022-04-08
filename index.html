@@ -1,153 +1,94 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seer Search</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
-  </head>
-  <style>
-    header{
-text-align:center;
-    }
-    h2{
-      width:100%;
-text-align:center;
-    }
-    footer{
-    display: table;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Seer</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript">
+function dosearch() {
+var sf=document.searchform;
+for (i=sf.sengines.length-1; i > -1; i--) {
+if (sf.sengines[i].checked) {
+var submitto = sf.sengines[i].value + escape(sf.searchterms.value);
 }
-    ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #FF0000;
 }
-    h1 {
-  text-align: center;
+window.location.href = submitto;
+return false;
 }
-
-li {
-  float: left;
-}
-
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 16px;
-  text-decoration: none;
-}
-
-li a:hover {
-  background-color: #111111;
-}
-    h4 {
-      text-align: right;
-    }
-  </style>
-  
-  <header>
-  </header>
-  <ul>
-    <li><img src="logo.png"
-          width="155" 
-     height="45" /></li>
-  <li><a href="index.html">Search</a></li>
-  <li><a href="videos.html">Videos</a></li>
-  <li><a href="images.html">Images</a></li>
-  <li><a href="wikifinder.html">Wiki Articles</a></li>
-  <li><a href="shopping.html">Shopping</a></li>
-    <li><a href="news.html">News</a></li>
-    <li><a href="seerkids.html">Seer™ Kids</a></li>
-</ul>
-  <script>
-        (function(d, s, id) {
-            if (d.getElementById(id)) {
-                if (window.__TOMORROW__) {
-                    window.__TOMORROW__.renderWidget();
-                }
-                return;
-            }
-            const fjs = d.getElementsByTagName(s)[0];
-            const js = d.createElement(s);
-            js.id = id;
-            js.src = "https://www.tomorrow.io/v1/widget/sdk/sdk.bundle.min.js";
-
-            fjs.parentNode.insertBefore(js, fjs);
-        })(document, 'script', 'tomorrow-sdk');
-        </script>
-
-        <div class="tomorrow"
-           data-location-id="081399"
-           data-language="EN"
-           data-unit-system="METRIC"
-           data-skin="light"
-           data-widget-type="aqiMini"
-           style="padding-bottom:22px;position:relative;"
-        >
-          <a
-            href="https://www.tomorrow.io/weather/"
-            rel="nofollow noopener noreferrer"
-            target="_blank"
-            style="position: absolute; bottom: 0; transform: translateX(-50%); left: 50%;"
-          >
-            <img
-              alt="Powered by Tomorrow.io"
-              src="https://weather-website-client.tomorrow.io/img/powered-by-tomorrow.svg"
-              width="140"
-              height="15"
-            />
-          </a>
-        </div>
-<h4><div id="clockbox"></div>
-
-<script type="text/javascript">
-var tday=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-var tmonth=["January","February","March","April","May","June","July","August","September","October","November","December"];
-
-function GetClock(){
-var d=new Date();
-var nday=d.getDay(),nmonth=d.getMonth(),ndate=d.getDate(),nyear=d.getFullYear();
-var nhour=d.getHours(),nmin=d.getMinutes(),nsec=d.getSeconds(),ap;
-
-if(nhour==0){ap=" AM";nhour=12;}
-else if(nhour<12){ap=" AM";}
-else if(nhour==12){ap=" PM";}
-else if(nhour>12){ap=" PM";nhour-=12;}
-
-if(nmin<=9) nmin="0"+nmin;
-if(nsec<=9) nsec="0"+nsec;
-
-var clocktext=""+tday[nday]+", "+tmonth[nmonth]+" "+ndate+", "+nyear+" "+nhour+":"+nmin+":"+nsec+ap+"";
-document.getElementById('clockbox').innerHTML=clocktext;
-}
-
-GetClock();
-setInterval(GetClock,1000);
 </script>
-</h4>
-  <body>
-   <h2><font face="Arial" size="5px" color="#00000">Ask Seer™ a question :</font></h2> 
-    <div class="gcse-searchbox" data-resultsUrl="https://seer.ebreomedia.repl.co/index.html" data-newWindow="true" data-queryParameterName="search" data-enableHistory="true" data-autoCompleteMaxCompletions="5" data-gname="storesearch"></div>
-    <font face="Arial" size="3px" color="#00000">Results :</font>
-    <div class="gcse-searchresults"></div>
-    <script async src="https://cse.google.com/cse.js?cx=96fc9a5a4c9a74f2c"></script>
-<div class="gcse-searchresults-only" data-refinementStyle="link" data-gname="storesearch"></div>
-    <script src="script.js"></script>
-  </body>
-  <footer>
-    <h1><a href="https://emirebreo.github.io/Seer/#gsc.tab=0"><img src="seerba1.png"
-          width="470" 
-     height="40" /></h1>
-  <font face="Arial" size="3px" color="#00000">© 2022 EbreoMedia</font>
+</head>
+  <style>
     
+    body{
+     
+       max-width: 500px;
+  margin: auto;
+      align-content: center;
+      text-align: center;
+  padding-top: 100px;
+      width: 79%;
+    }
+* {
+  box-sizing: border-box;
+}
+
+/* Style the search field */
+input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: center;
+  width: 75%;
+  background: #f1f1f1;
+}
+
+/* Style the submit button */
+input[type=submit] {
+  float: right;
+  width: 25%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none; /* Prevent double borders */
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background: #0b7dda;
+}
+
+/* Clear floats */
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+  </style>
+<body>
+  <li><img src="logo7.png"
+          width="245" 
+     height="100" /></li>
+  <form name="searchform" onSubmit="return dosearch();">
+
+<input type="text" name="searchterms">
+<input type="submit" name="SearchSubmit" value="Search">
+    <input a name="sengines" type="radio" value="search.html#gsc.tab=0&gsc.q=" checked> Web
+<input a name="sengines" type="radio" value="videos.html#gsc.tab=0&gsc.q="> Videos
+<input a name="sengines" type="radio" value="images.html#gsc.tab=0&gsc.q="> Images
+<input a name="sengines" type="radio" value="wikifinder.html#gsc.tab=0&gsc.q="> Wiki Articles
+    <input a name="sengines" type="radio" value="shopping.html#gsc.tab=0&gsc.q="> Shopping
+    <input a name="sengines" type="radio" value="news.html#gsc.tab=0&gsc.q="> News
+    <p><input a name="sengines" type="radio" value="seerkids.html#gsc.tab=0&gsc.q="> Seer™ Kids</p>
+    
+    
+</form>
+</body>
+<footer>
+       <font face="Arial" size="3px" color="#00000">© 2022 EbreoMedia :</font>
 <div id="google_translate_element"></div>
 <script type="text/javascript">// <![CDATA[
 function googleTranslateElementInit() {
@@ -161,5 +102,5 @@ new google.translate.TranslateElement({pageLanguage: 'en', layout: google.transl
     <img src="logo7.png"
           width="55" 
      height="25" />
-</footer>
+    </footer>
 </html>
